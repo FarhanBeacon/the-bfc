@@ -6,7 +6,7 @@ const Categories = () => {
   const { categories } = obj;
   return (
     <div className="w-[90%] mx-auto my-6">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {categories.map((category, idx) => (
           <Category category={category} key={idx}></Category>
         ))}

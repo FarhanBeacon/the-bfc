@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './Components/Home/Home.jsx';
 import Categories from './Components/Categories/Categories.jsx';
+import Meals from './Components/Meals/Meals.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ const router = createBrowserRouter([
         path: "/",
         loader: ()=>fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
         element: <Categories />
+      },
+      {
+        path: "/:strCategory",
+        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.strCategory}`),
+        element: <Meals></Meals>
       }
     ]
   }
